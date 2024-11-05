@@ -12,6 +12,34 @@ class VideoCard {
     return count;
   }
 
+  renderShimmer() {
+    const card = document.createElement("div");
+    card.className = "shimmer-card";
+
+    const thumbnail = document.createElement("div");
+    thumbnail.className = "shimmer-thumbnail";
+    card.appendChild(thumbnail);
+
+    const infoContainer = document.createElement("div");
+    infoContainer.className = "shimmer-info";
+
+    const title = document.createElement("div");
+    title.className = "shimmer-title";
+    infoContainer.appendChild(title);
+
+    const channel = document.createElement("div");
+    channel.className = "shimmer-channel";
+    infoContainer.appendChild(channel);
+
+    const viewCount = document.createElement("div");
+    viewCount.className = "shimmer-view-count";
+    infoContainer.appendChild(viewCount);
+
+    card.appendChild(infoContainer);
+
+    return card;
+  }
+
   render() {
     const { snippet, statistics } = this.info;
     const { channelTitle, title, thumbnails } = snippet;
